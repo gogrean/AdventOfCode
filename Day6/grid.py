@@ -33,7 +33,7 @@ grid = np.zeros((1000,1000))
 
 instructions = {
     "on": lambda x: x + 1,
-    "off": np.vectorize(lambda x: max(x-1, 0)), 
+    "off": lambda x: x - 1, 
     "toggle": lambda x: x + 2 
 }
 
@@ -49,8 +49,7 @@ for string in strings:
             break
         action = instructions[keyword[0]]
         grid[coords[0]:coords[2]+1,coords[1]:coords[3]+1] = action(grid[coords[0]:coords[2]+1,coords[1]:coords[3]+1])
-
-print(np.min(grid), np.max(grid))
+        grid[grid < 0] = 0
 
 print("The total brightness is: ", np.sum(grid))
 
