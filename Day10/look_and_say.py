@@ -1,6 +1,3 @@
-
-old = '1113222113'
-
 def number_length(old, reps):
     rep = 1
     while rep <= reps:
@@ -19,8 +16,10 @@ def number_length(old, reps):
         rep += 1
     return len(new)
 
-print("The length of the number after 40 iterations is ", number_length(old, 40), " characters.")
-print("The length of the number after 50 iterations is ", number_length(old, 50), " characters.")
+number = '1113222113'
+
+print("The length of the number after 40 iterations is ", number_length(number, 40), " characters.")
+print("The length of the number after 50 iterations is ", number_length(number, 50), " characters.")
 
     
         
